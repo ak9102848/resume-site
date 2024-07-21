@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#">Portfolio.</a>
+            </div>
+            <input type="checkbox" id="click">
+            <label for="click" class="mainicon">
+                <div class="menu">
+                    <i class="bi bi-list"></i>
+                </div>
+            </label>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button id="darkModeToggle" class="dark-mode-toggle"><i class="bi bi-moon"></i></button></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <div class="hero">
+            <p>Welcome to My Portfolio</p>
+            <h1>Hi, I'm <span>Aman</span><br>a passionate developer</h1>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="bio">
+                <div class="about-col-1">
+                    <img src="image.jpg" alt="My Photo">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p style="font-size: 18px; margin-top: 40px;">Hello! I'm a developer with a love for creating beautiful and functional web experiences. With a background in computer science and a passion for technology, I strive to build projects that not only look good but also work seamlessly.</p>
+                </div>
+            </div>
+        </div>                    
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="skil">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="bi bi-code-slash"></i>
+                    <h3>Frontend Development</h3>
+                    <p>HTML, CSS, JavaScript, Bootstrap</p>
+                    <!-- Add progress bar for Web Development -->
+                    <div class="progress">
+                        <div class="progress-bar bg-success" style="width: 80%;" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="bi bi-server"></i>
+                    <h3>Backend Development</h3>
+                    <p>Node.js, Express.js</p>
+                    <!-- Add progress bar for Backend Development -->
+                    <div class="progress">
+                        <div class="progress-bar bg-info" style="width: 70%;" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="bi bi-brush"></i>
+                    <h3>Design</h3>
+                    <p>Photoshop, Illustrator, Figma, Adobe XD</p>
+                    <!-- Add progress bar for Design -->
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" style="width: 60%;" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="portfolio">
+        <div class="container">
+            <h2 style="font-size: 60px;">My Projects</h2>
+            <div class="portfolio-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/150" alt="Project 1">
+                    <div class="project-info">
+                        <h2 style="margin-top: 10px; margin-bottom: 10px;">Project Title 1</h2>
+                        <p style="margin-bottom: 10px;">A brief description of the project. Technologies used: HTML, CSS, JavaScript.</p>
+                        <a href="https://example.com" class="btn">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/150" alt="Project 2">
+                    <div class="project-info">
+                        <h2 style="margin-top: 10px; margin-bottom: 10px;">Project Title 2</h2>
+                        <p style="margin-bottom: 10px;">A brief description of the project. Technologies used: Python, Flask, SQL.</p>
+                        <a href="https://example.com" class="btn">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300" alt="Project 3">
+                    <div class="project-info">
+                        <h2 style="margin-top: 10px; margin-bottom: 10px;">Project Title 3</h2>
+                        <p style="margin-bottom: 10px;">A brief description of the project. Technologies used: React, Node.js, MongoDB.</p>
+                        <a href="https://example.com" class="btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form name="submit-to-google-sheet">
+                <div class="form-group">
+                    <input type="text" name="Name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="Email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+            </div>
+            <div id="formMessage" style="display: none; margin-top: 20px; color: #e96d3f;">Message Sent!</div> <!-- Success message placeholder -->
+        </div>
+    </section>
+    
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyuyFsqxRsjSEJa6SW36Q2v8ziP8_FROjWUcPEDvcTE7kLkJTxvTtvAn79TMoZukmKC6w/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
+
+
+
+
