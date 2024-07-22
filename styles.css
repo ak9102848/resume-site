@@ -15,10 +15,6 @@ body.dark-mode {
     color: #e0e0e0;
 }
 
-body.dark-mode #about {
-    color: #e0e0e0; /* Text color for dark mode */
-}
-
 header {
     position: relative;
     top: 0;
@@ -37,7 +33,6 @@ nav {
     padding: 1.4rem 1rem;
     background-color: #000;
 }
-
 
 .logo {
     font-size: 1.3rem;
@@ -67,15 +62,6 @@ li a {
     letter-spacing: .7px;
 }
 
-ul li a::before {
-    content: "";
-    position: absolute;
-}
-
-ul li a:hover::before {
-    transform: scale(1, 1);
-}
-
 li a.active,
 li a:hover {
     color: #fff;
@@ -86,8 +72,11 @@ li a:hover {
     display: none;
 }
 
-.menu {
-    display: none;
+.menu-btn {
+    display: none; /* Hide menu button by default */
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #fff;
 }
 
 .dark-mode-toggle {
@@ -102,18 +91,38 @@ li a:hover {
     font-size: 1.5rem;
 }
 
-@media only screen and (max-width:1024px) {
-    nav {
-        max-width: 98%;
+@media only screen and (max-width:768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #000;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .menu-btn {
+        display: block; /* Show menu button on small screens */
+    }
+
+    .dark-mode-toggle {
+        display: block; /* Show dark mode toggle on small screens */
     }
 }
 
-@media only screen and (max-width:768px) {
-    html {
-        font-size: 80%;
-    }
+@media only screen and (max-width:1024px) {
     nav {
-        max-width: 100%;
+        max-width: 98%;
     }
 }
 
@@ -122,16 +131,15 @@ li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: left; /* Align text to the left */
-    padding: 0 10%; /* Add padding to the left and right */
+    text-align: left;
+    padding: 0 10%;
     background: url('pinimg.jpg') no-repeat center center/cover;
     color: #e0e0e0;
 }
 
 .hero {
-    max-width: 600px; /* Adjust max-width as needed */
+    max-width: 600px;
 }
-
 
 .hero h1 {
     font-size: 60px;
@@ -168,30 +176,30 @@ body.dark-mode #about {
     flex-wrap: wrap;
 }
 
-.about-col-1{
+.about-col-1 {
     flex-basis: 35%;
 }
 
-.about-col-1 img{
+.about-col-1 img {
     width: 100%;
     border-radius: 15px;
 }
 
-.about-col-2{
+.about-col-2 {
     flex-basis: 60%;
 }
 
-.sub-title{
+.sub-title {
     font-size: 60px;
     font-weight: 600;
 }
 
-.tab-titles{
+.tab-titles {
     display: flex;
     margin: 20px 0 40px;
 }
 
-.tab-links{
+.tab-links {
     margin-right: 50px;
     font-size: 18px;
     font-weight: 500;
@@ -199,7 +207,7 @@ body.dark-mode #about {
     position: relative;
 }
 
-.tab-links::after{
+.tab-links::after {
     content: '';
     width: 0;
     height: 3px;
@@ -210,11 +218,11 @@ body.dark-mode #about {
     transition: 0.5s;
 }
 
-.tab-links.active-link::after{
+.tab-links.active-link::after {
     width: 50%;
 }
 
-.skil{
+.skil {
     margin-bottom: 50px;
     font-size: 60px;
 }
@@ -245,22 +253,20 @@ body.dark-mode #about {
     margin-bottom: 1rem;
 }
 
-/* Ensure progress bars fit within the skill-card */
 .skill-card .progress {
     margin-top: 10px;
-    height: 20px; /* Adjust height as needed */
-    background-color: #e0e0e0; /* Light gray background for progress bars */
+    height: 20px;
+    background-color: #e0e0e0;
 }
 
 .skill-card .progress-bar {
     height: 100%;
-    line-height: 20px; /* Center text vertically */
+    line-height: 20px;
     color: white;
     text-align: center;
     transition: width 0.5s;
 }
 
-/* Color classes for progress bars */
 .bg-success {
     background-color: #28a745;
 }
@@ -276,7 +282,6 @@ body.dark-mode #about {
 .bg-danger {
     background-color: #dc3545;
 }
-
 
 .portfolio-grid {
     display: flex;
@@ -356,77 +361,41 @@ body.dark-mode #about {
     margin-bottom: 1.5rem;
 }
 
-.form-group input, .form-group textarea {
+.form-group input,
+.form-group textarea {
     width: 100%;
     padding: 1rem;
     border: none;
     border-radius: 5px;
     background: #333;
     color: #fff;
-    font-size: 1rem;
-    outline: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .form-group textarea {
-    resize: vertical;
     height: 150px;
 }
 
-.form-group input::placeholder, .form-group textarea::placeholder {
-    color: #aaa;
-}
-
-.btn {
-    background: #e96d3f;
-    color: #fff;
+.btn-primary {
+    background: #ff004f;
     border: none;
+    color: #fff;
     padding: 1rem 2rem;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s ease;
 }
 
-.btn:hover {
-    background: #d55a30;
+.btn-primary:hover {
+    background: #e96d3f;
 }
 
-.social-links {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
+@media only screen and (max-width: 768px) {
+    #contact {
+        padding: 2rem 1rem;
+    }
 
-.social-links a {
-    color: #e96d3f;
-    font-size: 2rem;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #fff;
-}
-
-#contact {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 4rem 1rem;
-    text-align: center;
-    margin-bottom: 40px; /* Add this line */
-}
-
-
-/* Update these styles to ensure the text is visible */
-.form-group input, .form-group textarea {
-    color: #fff; /* Ensure text is white */
-    background: #333; /* Dark background */
-    border: 1px solid #555; /* Add a border for better contrast */
-}
-
-/* Placeholder text color */
-.form-group input::placeholder, .form-group textarea::placeholder {
-    color: #aaa; /* Light gray for placeholder text */
+    #contact h2 {
+        font-size: 1.5rem;
+    }
 }
 
 
